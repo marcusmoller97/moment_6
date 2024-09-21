@@ -39,6 +39,7 @@ function clickEvent () {
     const input = document.querySelector("#wordUpper");
     const p = document.querySelector("p")
     p.textContent = wordToUpperCase(input.value);
+    console.log(wordToUpperCase(input.value));
     input.value = ""
 }
 export { wordToUpperCase, formBtnInput, clickEvent };
