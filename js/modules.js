@@ -15,17 +15,30 @@ function wordToUpperCase (word) {
  * Function to create input and button.
  */
 function formBtnInput () {
-    const body = document.querySelector("div");
+    const div = document.querySelector("div");
 
     const input = document.createElement("input");
     input.type = "text";
+    input.id = "wordUpper";
     input.placeholder = "Skriv ett ord...";
-    body.appendChild(input);
+    div.appendChild(input);
 
     const btn = document.createElement("button");
+    const p = document.createElement("p");
+
     btn.type = "button";
     btn.innerHTML = "Submit";
-    body.appendChild(btn);
+    div.appendChild(btn);
+    div.appendChild(p);
 }
 
-export { wordToUpperCase, formBtnInput };
+/**
+ * Function for clickevent.
+ */
+function clickEvent () {
+    const input = document.querySelector("#wordUpper");
+    const p = document.querySelector("p")
+    p.textContent = wordToUpperCase(input.value);
+    input.value = ""
+}
+export { wordToUpperCase, formBtnInput, clickEvent };
